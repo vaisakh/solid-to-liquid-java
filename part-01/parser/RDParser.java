@@ -34,7 +34,7 @@ public class RDParser extends Lexer {
             Expr();
             double x = valueStack.pop();
             double y = valueStack.pop();
-            valueStack.push((lToken == Token.TOK_PLUS) ? (x + y) : (x - y));
+            valueStack.push((lToken == Token.TOK_PLUS) ? (x + y) : (y - x));
         }
     }
 
@@ -52,7 +52,7 @@ public class RDParser extends Lexer {
                 System.out.println("Division By Zero Error");
                 throw new Exception();
             }
-            valueStack.push((lToken == Token.TOK_MUL) ? (x * y) : (x / y));
+            valueStack.push((lToken == Token.TOK_MUL) ? (x * y) : (y / x));
 
         }
     }
